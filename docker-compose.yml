@@ -1,0 +1,17 @@
+services:
+  pony-zomboid:
+    image: indifferentbroccoli/projectzomboid-server-docker
+    restart: unless-stopped
+    container_name: pony-zomboid
+    stop_grace_period: 30s
+    ports:
+      - 16263:16263/udp
+      - 16264:16264/udp
+      - 27016:27015/tcp
+    environment:
+      GENERATE_SETTINGS: true
+    env_file:
+      - .env
+    volumes:
+      - ./files:/project-zomboid
+      - ./data:/project-zomboid-config
