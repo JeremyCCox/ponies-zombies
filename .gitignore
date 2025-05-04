@@ -4,3 +4,4 @@ files
 data/Server/PonyPals.ini
 data/Server/PonyPals.ini-copy
 data/Logs
+.env.secrets
