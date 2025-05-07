@@ -185,7 +185,7 @@ SandboxVars = {
     -- Number of days until 100% growth. -1 means no growth. Zero means use the Erosion Speed option. Maximum 36,500 (100 years). Minimum=-1 Maximum=36500 Default=0
     ErosionDays = 0,
     -- Modifies the base XP gain from actions by this number. Minimum=0.00 Maximum=1000.00 Default=1.00
-    XpMultiplier = 1.0,
+    XpMultiplier = 3.0,
     -- Determines if the XP multiplier affects passively levelled skills eg. Fitness and Strength.
     XpMultiplierAffectsPassive = false,
     -- Use this to multiply or reduce engine general loudness. Minimum=0.00 Maximum=100.00 Default=1.00
@@ -345,7 +345,7 @@ SandboxVars = {
     -- 5 = Often
     AnnotatedMapChance = 4,
     -- Adds free points during character creation. Minimum=-100 Maximum=100 Default=0
-    CharacterFreePoints = 0,
+    CharacterFreePoints = 12,
     -- Gives player-built constructions extra hit points so they are more resistant to zombie damage. Default=Normal
     -- 1 = Very Low
     -- 2 = Low
@@ -422,14 +422,14 @@ SandboxVars = {
     -- Governs the chances of finding vehicles with gas in the tank. Default=Low
     -- 1 = Low
     -- 2 = Normal
-    ChanceHasGas = 1,
+    ChanceHasGas = 2,
     -- Governs how full gas tanks will be in discovered cars. Default=Low
     -- 1 = Very Low
     -- 2 = Low
     -- 3 = Normal
     -- 4 = High
     -- 5 = Very High
-    InitialGas = 2,
+    InitialGas = 3,
     -- Governs how full gas tanks in fuel station will be, initially. Default=Normal
     -- 1 = Empty
     -- 2 = Super Low
@@ -454,7 +454,7 @@ SandboxVars = {
     -- 2 = Low
     -- 3 = Normal
     -- 4 = High
-    CarGeneralCondition = 2,
+    CarGeneralCondition = 3,
     -- Governs the amount of damage dealt to vehicles that crash. Default=Normal
     -- 1 = Very Low
     -- 2 = Low
@@ -588,17 +588,17 @@ SandboxVars = {
     },
     ZombieConfig = {
         -- Set by the "Zombie Count" population option. 4.0 = Insane, Very High = 3.0, 2.0 = High, 1.0 = Normal, 0.35 = Low, 0.0 = None. Minimum=0.00 Maximum=4.00 Default=1.00
-        PopulationMultiplier = 1.0,
+        PopulationMultiplier = 0.7,
         -- Adjusts the desired population at the start of the game. Minimum=0.00 Maximum=4.00 Default=1.00
-        PopulationStartMultiplier = 1.0,
+        PopulationStartMultiplier = 0.7,
         -- Adjusts the desired population on the peak day. Minimum=0.00 Maximum=4.00 Default=1.50
-        PopulationPeakMultiplier = 1.5,
+        PopulationPeakMultiplier = 1.0,
         -- The day when the population reaches it's peak. Minimum=1 Maximum=365 Default=28
         PopulationPeakDay = 28,
         -- The number of hours that must pass before zombies may respawn in a cell. If zero, spawning is disabled. Minimum=0.00 Maximum=8760.00 Default=72.00
-        RespawnHours = 72.0,
+        RespawnHours = 120.0,
         -- The number of hours that a chunk must be unseen before zombies may respawn in it. Minimum=0.00 Maximum=8760.00 Default=16.00
-        RespawnUnseenHours = 16.0,
+        RespawnUnseenHours = 20.0,
         -- The fraction of a cell's desired population that may respawn every RespawnHours. Minimum=0.00 Maximum=1.00 Default=0.10
         RespawnMultiplier = 0.1,
         -- The number of hours that must pass before zombies migrate to empty parts of the same cell. If zero, migration is disabled. Minimum=0.00 Maximum=8760.00 Default=12.00
@@ -606,7 +606,7 @@ SandboxVars = {
         -- The distance a zombie will try to walk towards the last sound it heard. Minimum=10 Maximum=1000 Default=100
         FollowSoundDistance = 100,
         -- The size of groups real zombies form when idle. Zero means zombies don't form groups. Groups don't form inside buildings or forest zones. Minimum=0 Maximum=1000 Default=20
-        RallyGroupSize = 20,
+        RallyGroupSize = 15,
         -- The distance real zombies travel to form groups when idle. Minimum=5 Maximum=50 Default=20
         RallyTravelDistance = 20,
         -- The distance between zombie groups. Minimum=5 Maximum=25 Default=15
