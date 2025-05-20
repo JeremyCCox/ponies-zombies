@@ -1,0 +1,16 @@
+services:
+  zomboid_one:
+    image: danixu86/project-zomboid-dedicated-server
+    ports:
+      - "8766:8766/udp"
+      - "8767:8767/udp"
+      - "16261:16261/udp"
+    environment:
+      - FORECUPDATE=true
+      - PASSWORD=3804varsity
+      - ADMINUSERNAME=jeremy
+      - ADMINPASSWORD=whale
+      - SERVERNAME=PeepoJemmy
+      - NOSTEAM=False
+    volumes:
+      - /Saves/Multiplayer:/home/steam/Zomboid/Saves/Multiplayer
