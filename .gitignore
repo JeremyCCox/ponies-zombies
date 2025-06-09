@@ -4,8 +4,12 @@ files
 data/Server/PonyPals.ini
 data/Server/PonyPals.ini-copy
 data/Logs
+data/db/
 .env.secrets
 data/Saves/Multiplayer/
 !data/Saves/Multiplayer/backups/
 
 
+data/server-console.txt
+data/options.ini
+data/messaging
