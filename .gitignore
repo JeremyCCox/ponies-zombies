@@ -1,5 +1,5 @@
-.env.secret
-.env
+.env*
+!.env.public
 files
 data/Server/PonyPals.ini
 data/Server/PonyPals.ini-copy
