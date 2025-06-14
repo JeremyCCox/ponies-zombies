@@ -497,6 +497,77 @@ SandboxVars = {
     MaggotSpawn = 1,
     -- The higher the value, the longer lightbulbs last before breaking. If 0, lightbulbs will never break. Does not affect vehicle headlights. Minimum=0.00 Maximum=1000.00 Default=1.00
     LightBulbLifespan = 1.0,
+    -- Minimum=0 Maximum=100 Default=6
+    ChanceOfAttachedWeapon = 6,
+    -- Minimum=0 Maximum=100 Default=1
+    ChanceOfLongBlade = 1,
+    -- Minimum=0 Maximum=100 Default=5
+    ChanceOfHuntingKnife = 5,
+    -- Minimum=0 Maximum=100 Default=5
+    ChanceOfSpears = 5,
+    -- Minimum=0 Maximum=100 Default=2
+    ChanceOfAxe = 2,
+    -- Minimum=0 Maximum=100 Default=3
+    ChanceOfBlunts = 3,
+    -- Minimum=0 Maximum=100 Default=50
+    ChanceOfGunsOnOutfits = 50,
+    DaySurvivedModifier = 4,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    ZombieLootMultiplier = 1.0,
+    ItemsAddedToZombieLoot = "Base.Money:0.05;Base.SheetPaper2:0.05",
+    ItemsAddedToMilitaryZedsLoot = "",
+    ItemsAddedToPoliceZedsLoot = "",
+    ItemsAddedToFiremenZedsLoot = "",
+    ItemsAddedToRichZedsLoot = "",
+    ItemsAddedToRuralZedsLoot = "",
+    ItemsAddedToRogueZedsLoot = "",
+    ItemsAddedToSchoolZedsLoot = "",
+    ItemsAddedToSportsZedsLoot = "",
+    ItemsAddedToMedicalZedsLoot = "",
+    ItemsAddedToIndustryZedsLoot = "",
+    ItemsAddedToGasStationZedsLoot = "",
+    ItemsAddedToRestaurantZedsLoot = "",
+    ItemsAddedToOfficeWorkersZedsLoot = "",
+    CustomOutfitList = "",
+    ItemsAddedToCustomOutfitListLoot = "",
+    -- Minimum=1 Maximum=100 Default=20
+    CigarettesCount = 20,
+    MaxRolls = 5,
+    FoodTablesMaxRolls = 4,
+    MeleeWeaponsAndToolsTablesMaxRolls = 4,
+    GunsAndAmmoTablesMaxRolls = 4,
+    LitteratureTablesMaxRolls = 4,
+    MediaTablesMaxRolls = 4,
+    MechanicsTablesMaxRolls = 4,
+    OtherTablesMaxRolls = 4,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    FoodLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    WeaponLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    GunLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    AmmoLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    SurvivalGearLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    MechanicsLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    MedicalLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    LiteratureLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    MediaLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    HouseholdSuppliesLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    ClothingLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    ContainerLootMultiplier = 1.0,
+    -- Minimum=0.00 Maximum=10.00 Default=1.00
+    OtherLootMultiplier = 1.0,
+    ExceptionsList = "Base.Sledgehammer;Base.Sledgehammer2",
+    SpecificItemsList = "Base.Cigarettes:1;Base.Sledgehammer:1;Base.Sledgehammer2:1",
     Map = {
         AllowMiniMap = true,
         AllowWorldMap = true,
@@ -590,7 +661,7 @@ SandboxVars = {
         -- Set by the "Zombie Count" population option. 4.0 = Insane, Very High = 3.0, 2.0 = High, 1.0 = Normal, 0.35 = Low, 0.0 = None. Minimum=0.00 Maximum=4.00 Default=1.00
         PopulationMultiplier = 1.8,
         -- Adjusts the desired population at the start of the game. Minimum=0.00 Maximum=4.00 Default=1.00
-        PopulationStartMultiplier = 1,
+        PopulationStartMultiplier = 1.0,
         -- Adjusts the desired population on the peak day. Minimum=0.00 Maximum=4.00 Default=1.50
         PopulationPeakMultiplier = 1.5,
         -- The day when the population reaches it's peak. Minimum=1 Maximum=365 Default=28
@@ -626,6 +697,7 @@ SandboxVars = {
         AllowChonkerSpawns = true,
         AllowCashcowSpawns = true,
         AllowMcBoxySpawns = true,
+        AllowBushmasterSpawns = true,
     },
     CF8KSweeper = {
         AllowTiles = true,
@@ -676,8 +748,244 @@ SandboxVars = {
     H_E_C_U = {
         ClothingSelection = true,
     },
-    ProxInv = {
-        ZombieOnly = false,
+    KillCount = {
+        doExport = false,
+        includePostDeathUI = true,
+        -- Minimum=0 Maximum=10000000 Default=500
+        MaxUpdateDelay = 500,
+        shareOnServer = true,
+        keepTrackOfDead = true,
+    },
+    MoreBuilds = {
+        -- Minimum=1 Maximum=10000 Default=1200
+        MaxWaterWallStorageAmount = 1200,
+        BuildingPermission = 1,
+    },
+    MoreDecreasingLoot = {
+        Enable = false,
+        -- Minimum=0 Maximum=1000 Default=2
+        StartDay = 2,
+        -- Minimum=0 Maximum=1000 Default=30
+        PeakDay = 30,
+        -- Minimum=0 Maximum=100 Default=0
+        OriginalChance = 0,
+        -- Minimum=0 Maximum=100 Default=75
+        MaxChance = 75,
+        -- Minimum=-100 Maximum=100 Default=20
+        FoodChanceModifier = 20,
+        EnhancedVariance = true,
+        TriggerOnVehicleParts = true,
+        TriggerOnDeadBodies = false,
+        TriggerOnProximity = false,
+    },
+    MoreSmokes = {
+        Loot = 2,
+        Moodle = true,
+        -- Minimum=1 Maximum=10 Default=2
+        Kits = 2,
+        -- Minimum=1 Maximum=10 Default=2
+        Magazines = 2,
+        RareMagazines = false,
+        -- Minimum=1 Maximum=10 Default=2
+        Seeds = 2,
+        YesCannabis = true,
+        -- Minimum=1 Maximum=10 Default=2
+        Cannabis = 2,
+        YesTobacco = true,
+        -- Minimum=1 Maximum=10 Default=2
+        Tobacco = 2,
+        -- Minimum=1 Maximum=10 Default=2
+        Edibles = 2,
+        -- Minimum=1 Maximum=10 Default=2
+        Glassware = 2,
+        -- Minimum=1 Maximum=50 Default=2
+        Munchies = 2,
+        -- Minimum=1 Maximum=50 Default=2
+        StonerPerk = 2,
+        -- Minimum=1 Maximum=50 Default=2
+        Paranoid = 2,
+        -- Minimum=0 Maximum=5 Default=0
+        CultivationBonus = 0,
+        -- Minimum=1 Maximum=50 Default=2
+        StonedIncreaseMulti = 2,
+        -- Minimum=1 Maximum=50 Default=2
+        StonedDecreaseMulti = 2,
+        TimerInfo = true,
+        -- Minimum=1 Maximum=20 Default=10
+        DryCureChange = 10,
+        -- Minimum=0 Maximum=10 Default=2
+        HarvestAdd = 2,
+        -- Minimum=12 Maximum=250 Default=90
+        GrowTimer = 90,
+        -- Minimum=12 Maximum=250 Default=90
+        RotTimer = 90,
+    },
+    MoreMaps = {
+        ForageableMaps = true,
+        -- Minimum=0.00 Maximum=4.00 Default=1.00
+        MapLootMultiplier = 1.0,
+        KentuckyCompleteMap = false,
+        LouisVilleCompleteMap = true,
+        LouisVilleDistrictMaps = true,
+        TrailerParkMaps = true,
+        ValleyStationMap = true,
+        ValleyStationMallAreaMap = true,
+        EasternSummerCampMap = true,
+        AbandonedFactoryMap = true,
+        EkronMap = true,
+        MilitaryMaps = true,
+        FortRedstoneMap = true,
+        MilitaryAirportMap = true,
+        FortBenningMap = true,
+        FortRockRidgeMap = true,
+        MuldraughMilitaryBaseMap = true,
+        FortWaterfrontMap = true,
+        FortKnoxMaps = true,
+        RiversideCountryClubMap = true,
+        SmallTownWestMap = true,
+        PonyRoamOMap = true,
+        MuldraughRailyardMap = true,
+        MuldraughWarehouseComplexMap = true,
+        CabinLocations = true,
+        CampGroundsLocation = true,
+        GrapeseedMap = true,
+        BlackwoodMap = true,
+        PitstopMap = true,
+        OverTheRiverMap = true,
+        LakeIvyMap = true,
+        WeatherStationLocations = true,
+        CompleteRavenCreekMap = true,
+        RavenCreekDistrictMaps = true,
+        RosewoodExpansionMap = true,
+        MarchRidgeExpansionMap = true,
+        CONResearchMap = true,
+        GreenleafMap = true,
+        LittleTownshipMap = true,
+        LindenMap = true,
+        RefordvilleMap = true,
+        ChernavilleMap = true,
+        ChinatownMap = true,
+        BlueberryMap = true,
+        WestPointSouthTrailerParkMap = true,
+        KingsmouthMap = true,
+        SurvivorWarehouseLocation = true,
+        CoryerdonMap = true,
+        OldParkTownMap = true,
+        WestPointExpansionMap = true,
+        GlenportMap = true,
+        CompleteEerieCountryMap = true,
+        EerieCountryDifferentMaps = true,
+        SlocanLakeMaps = true,
+        BillionaireSafehouseLocation = true,
+        WildberriesMap = true,
+        TugalandMap = true,
+        RemusMap = true,
+        TrimbleCountyMaps = true,
+        EZPZCommunityCenterMap = true,
+        OldPineVillageMap = true,
+        ChristmasVillageMap = true,
+        HyruleCountyMap = true,
+        RiverwoodMap = true,
+        HongKongYauMaTeiMap = true,
+        WesternMilitaryComplexMap = true,
+        MansionAdress = true,
+        ConstructionFactoryMap = true,
+        WestwoodMap = true,
+        AnthemMap = true,
+        LaconiaMap = true,
+        AshenwoodMap = true,
+        ElysiumIslandMap = true,
+        HopewellMap = true,
+        WalnutRidgeMap = true,
+        HeavensHillMansionAdress = true,
+        ChestownMap = true,
+        NashvilleMap = true,
+        OverlookHotelMap = true,
+        PerfectShelterMap = true,
+        OConnorFarmAddress = true,
+        LincolnRegionalAirportMap = true,
+        MuldraughWesternShippingCompanyMap = true,
+        RosewoodMilitaryHospitalMap = true,
+        TheMuseumMap = true,
+        TheEyeLakeMap = true,
+        AddamsFamilyMansionMap = true,
+        JeffersonvilleMap = true,
+        CherokeeLakeMap = true,
+        RiversideMansionMap = true,
+        FinneganMentalAsylumMap = true,
+        PapavilleMap = true,
+        SouthTownMap = true,
+        ChinatownMapExpansionMap = true,
+        LouisvilleBunkerLocationMap = true,
+        OrchidwoodMap = true,
+        WinchesterMap = true,
+        BreakpointMap = true,
+        WilboreMap = true,
+        PetrovilleMap = true,
+        CedarHillMap = true,
+        CathayaValleyMap = true,
+        SpringwoodMap = true,
+        NaturesVengeanceTownshipMap = true,
+        BigBearLakeMaps = true,
+        SimsZomboidMap = true,
+        DirkerdamMaps = true,
+        LakeCumberlandMaps = true,
+        PharmaceuticalFactoryMap = true,
+        NettleTownshipMap = true,
+        StMooseHospitalMap = true,
+        ShortrestCountyMap = true,
+        LeavenburgMap = true,
+        BunkerDayOfTheDeadMap = true,
+        SuperGigaMartMap = true,
+        ZtardewValleyMap = true,
+        TheWalkingDeadPrisonMap = true,
+        TheWalkingDeadTerminusMap = true,
+        HuntersBaseMap = true,
+        PortCityMap = true,
+        SpringValleyMap = true,
+        OakshireMap = true,
+        RangersHomesteadMap = true,
+        FrigateMap = true,
+        BunkerLastMinutePrepperMap = true,
+        LouisvilleQuarantineZoneMap = true,
+        LVInternationalAirport = true,
+        MuldraughCheckpointMap = true,
+        SpeckMap = true,
+        HomesteadWindyMap = true,
+        MilitaryFuelDepotMap = true,
+        SpencerMansionMap = true,
+        UncleRedsBunkerMap = true,
+        HopefallsMap = true,
+        VineGroveMap = true,
+        LouisianaMap = true,
+        CaliforniaMaps = true,
+        WeyhausenMap = true,
+        DaisyCountyMap = true,
+        McCoysBunkerMap = true,
+        OtterCreekMap = true,
+        WellsburgLakeMap = true,
+        FortBoonesboroughMap = true,
+        CrowlakeMap = true,
+        GustonMap = true,
+        JaspervilleMap = true,
+        YakamaStateParkMap = true,
+        ValuTechAmusementParkMap = true,
+        CanvasbackStudiosMap = true,
+        PlefordSpringsMap = true,
+        FoxWoodMap = true,
+        BrazilMap = true,
+        FortLoidMap = true,
+        HavenRidgeMap = true,
+    },
+    PlayersOnMap = {
+        Enabled = true,
+        ShowPlayerNames = true,
+        ShowMyName = true,
+        ShowOnlyFaction = false,
+        ShowDeadPlayers = true,
+        FontDebugConsole = false,
+        -- Minimum=-1 Maximum=999999999 Default=-1
+        MaxDistance = -1,
     },
     pointblankhf = {
         -- Minimum=0.00 Maximum=1.00 Default=0.05
@@ -693,6 +1001,14 @@ SandboxVars = {
         PointBlankDisableMultiplayerCommandUpdates = false,
         -- Minimum=1.00 Maximum=100000.00 Default=1.00
         PointBlankMinTicksBetweenPointBlankKills = 1.0,
+    },
+    ProxInv = {
+        ZombieOnly = false,
+    },
+    RVInterior = {
+        -- Minimum=0 Maximum=100 Default=20
+        SafeZombieDistance = 20,
+        NotWhenChased = true,
     },
     SkillRecoveryJournal = {
         -- Minimum=1 Maximum=100 Default=100
@@ -722,6 +1038,14 @@ SandboxVars = {
         -- Minimum=0 Maximum=100 Default=0
         KillsTrack = 0,
     },
+    TheyKnew = {
+        -- Minimum=1 Maximum=1000000 Default=500
+        SpawnChance = 500,
+        -- Minimum=0 Maximum=100 Default=100
+        LootChance = 100,
+        -- Minimum=0 Maximum=100 Default=0
+        LootChanceZomboxycycline = 0,
+    },
     UndeadSurvivor = {
         -- Minimum=0.00 Maximum=100.00 Default=0.04
         StalkerChance = 0.04,
@@ -733,6 +1057,25 @@ SandboxVars = {
         HeadhunterChance = 0.04,
         -- Minimum=0.00 Maximum=100.00 Default=0.08
         AmazonaChance = 0.08,
+    },
+    ExpandedHeli = {
+        -- Minimum=0 Maximum=999 Default=0
+        StartDay = 0,
+        -- Minimum=1 Maximum=999 Default=90
+        SchedulerDuration = 90,
+        ContinueSchedulingEvents = 1,
+        WeatherImpactsEvents = true,
+        -- Minimum=0.00 Maximum=1000.00 Default=1.00
+        CrashChanceMulti = 1.0,
+        AirRaidSirenEvent = true,
+        Frequency_jet = 3,
+        Frequency_police = 3,
+        Frequency_news_chopper = 3,
+        Frequency_military = 3,
+        Frequency_FEMA_drop = 3,
+        Frequency_samaritan_drop = 3,
+        Frequency_survivor_heli = 3,
+        Frequency_raiders = 3,
     },
     TOC = {
         -- Minimum=1 Maximum=10 Default=1
@@ -749,5 +1092,16 @@ SandboxVars = {
     },
     RepairableWindows = {
         BreakChance = 1,
+    },
+    VFE = {
+        PoliceWeapons = true,
+        MilitaryWeapons = true,
+        SurvivorWeapons = true,
+        OtherWeapons = true,
+        CarWeapons = true,
+        HouseWeapons = true,
+        -- Minimum=0.10 Maximum=10.00 Default=1.00
+        HouseWeaponsMulti = 1.0,
+        HeavyWeapons = true,
     },
 }
