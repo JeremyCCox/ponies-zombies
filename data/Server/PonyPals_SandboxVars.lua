@@ -661,7 +661,7 @@ SandboxVars = {
         -- Set by the "Zombie Count" population option. 4.0 = Insane, Very High = 3.0, 2.0 = High, 1.0 = Normal, 0.35 = Low, 0.0 = None. Minimum=0.00 Maximum=4.00 Default=1.00
         PopulationMultiplier = 2.4,
         -- Adjusts the desired population at the start of the game. Minimum=0.00 Maximum=4.00 Default=1.00
-        PopulationStartMultiplier = 1,
+        PopulationStartMultiplier = 1.0,
         -- Adjusts the desired population on the peak day. Minimum=0.00 Maximum=4.00 Default=1.50
         PopulationPeakMultiplier = 1.5,
         -- The day when the population reaches it's peak. Minimum=1 Maximum=365 Default=28
@@ -689,6 +689,7 @@ SandboxVars = {
         AllowVanillaVehicleDismantling = true,
         AllowVanillaWorldItemDismantling = true,
         AllowPowerChadSpawns = true,
+        AllowWreckyMcChevySpawns = true,
         AllowManlyMANSpawns = true,
         AllowGreatScottSpawns = true,
         AlLAV300Spawns = true,
@@ -746,7 +747,27 @@ SandboxVars = {
         CanWoundIntensity = 1.0,
     },
     H_E_C_U = {
+        EmptyBox0 = false,
+        ClothingCategoryDivider = false,
         ClothingSelection = true,
+        -- Minimum=0.01 Maximum=100.00 Default=1.00
+        ClothingSpawnMult = 1.0,
+        ClothingMoreSpawns = 1,
+        ClothingMoreSpawnsCustom = "",
+        EmptyBox0 = false,
+        ZedsCategoryDivider = false,
+        ZedsCustomSpawn = true,
+        -- Minimum=0.01 Maximum=100.00 Default=1.00
+        ZedSpawnMult = 1.0,
+        ZedsMoreSpawns = 1,
+        ZedsMoreSpawnsCustom = "",
+        ZedAttachedItems = true,
+        ZedAddedItems = true,
+        ZedAddedSounds = true,
+        EmptyBox0 = false,
+        AttachmentsCategoryDivider = false,
+        BackpackBackSlot = true,
+        BeltSlots = true,
     },
     KillCount = {
         doExport = false,
@@ -1033,10 +1054,11 @@ SandboxVars = {
         RecoverAgilitySkills = -1,
         RecoverRecipes = true,
         RecoveryJournalUsed = false,
-        CraftRecipe = "Notebook/Journal|LeatherStrips=3|[Recipe.GetItemTypes.Glue]|Thread",
-        ModDataTrack = "",
         -- Minimum=0 Maximum=100 Default=0
         KillsTrack = 0,
+        CraftRecipe = "Notebook/Journal|LeatherStrips=3|[Recipe.GetItemTypes.Glue]|Thread",
+        ModDataTrack = "",
+        SecurityFeatures = 1,
     },
     TheyKnew = {
         -- Minimum=1 Maximum=1000000 Default=500
